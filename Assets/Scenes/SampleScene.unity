@@ -5268,7 +5268,7 @@ MonoBehaviour:
   growingRate: 0.5
   microphoneInput: {fileID: 2108866090}
   shrinkRate: 0.00025
-  MAX_SIZE: 2
+  MAX_SIZE: 3
   isFlying: 0
   rightForce: {fileID: 1396929472}
   inmediateMassDelta: 0.1
@@ -5474,13 +5474,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36b9f99f6fb476c4a86a08ac4bae9742, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rForce: 500
+  rForce: 700
   uForce: 700
   gravityScale: 0.03
   initialMass: 10
-  inmediateMass: 7
-  intervalBetweenMasses: 60
+  inmediateMass: 8
+  intervalBetweenMasses: 120
   bubbleBlowUpController: {fileID: 1311563816}
+  inmediateMassMultiplier: 3
 --- !u!1 &1404927659
 GameObject:
   m_ObjectHideFlags: 0
@@ -5511,7 +5512,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rightForce: {fileID: 1396929472}
-  charMass: 1
+  charMass: 10
 --- !u!4 &1404927661
 Transform:
   m_ObjectHideFlags: 0
