@@ -10,6 +10,7 @@ public class RightForce : MonoBehaviour
     public int intervalBetweenMasses = 60;
     private int currentInterval = 0;
     private bool forceWasApplied = false;
+    public float goUpDiff = 2f;
     private Rigidbody2D rb;
     public BubbleBlowUpController bubbleBlowUpController;
     public float inmediateMassMultiplier;
@@ -39,10 +40,18 @@ public class RightForce : MonoBehaviour
     public void applyForceToBubble()
     {
         rb.mass = initialMass;
+        inmediateMass -= bubbleBlowUpController.transform.localScale.x * inmediateMassMultiplier;
+        if (initialMass - inmediateMass > goUpDiff)
+        {
+            rb.gravityScale = -gravityScale;
+        }
+        else
+        {
+            rb.gravityScale = gravityScale;
+        }
+
         rb.AddForce(new Vector2(rForce, uForce));
-        rb.gravityScale = gravityScale;
         bubbleBlowUpController.isFlying = true;
         forceWasApplied = true;
-        inmediateMass -= bubbleBlowUpController.transform.localScale.x * inmediateMassMultiplier;
     }
 }

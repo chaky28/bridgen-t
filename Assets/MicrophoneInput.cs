@@ -35,7 +35,7 @@ void Start()
         // Initialize slider value and text
         if (sensitivitySlider != null)
         {
-            sensitivitySlider.value = 0.5f; // Default sensitivity
+            sensitivitySlider.value = sensitivity; // Default sensitivity
             UpdateSensitivityText();
         }
     }
@@ -55,7 +55,7 @@ void Start()
             //Debug.Log("Volume: " + volume);
 
             // Detect blowing based on volume threshold
-            if (volume > sensitivitySlider.value)
+            if ( Input.GetKey(KeyCode.Q)) //volume > sensitivitySlider.value)
             {
                 Debug.Log("Blowing detected!");
                 isDetecting = true;

@@ -20,6 +20,11 @@ public class BubbleBlowUpController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (MAX_SIZE - transform.localScale.x < .3)
+        {
+            GetComponent<SpriteRenderer>().color = Color.red;
+        }
+
         Debug.Log(microphoneInput.isDetecting);
         if (microphoneInput.isDetecting)
         {
