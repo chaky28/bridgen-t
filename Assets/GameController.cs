@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
@@ -7,7 +8,7 @@ public class GameController : MonoBehaviour
     public WindAreaParticles windAreaParticles;
     public RightForce rightForce;
     private bool windEnabled;
-
+    public int playerLives = 3;
     void Start()
     {
         windEnabled = false;
@@ -16,6 +17,13 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Restart the scene
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+
+
         if (Input.GetKeyDown(KeyCode.Space))
         {
             if (!windEnabled)
@@ -51,4 +59,16 @@ public class GameController : MonoBehaviour
         windArea.GetComponent<BoxCollider2D>().enabled = true;
         windEnabled = true;
     }
+
+    int GetLives()
+    {
+        return playerLives;
+    }
+
+    void LoseLife()
+    {
+        playerLives -= 1;
+    }
+
+
 }
