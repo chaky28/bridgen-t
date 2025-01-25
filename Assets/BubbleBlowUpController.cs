@@ -8,6 +8,7 @@ public class BubbleBlowUpController : MonoBehaviour
     public MicrophoneInput microphoneInput;
     public float shrinkRate;
     public float MAX_SIZE;
+    public bool isFlying = false; 
     private Animator anim;
     void Start()
     {
@@ -29,7 +30,7 @@ public class BubbleBlowUpController : MonoBehaviour
         }
         else
         {
-            if (transform.localScale.x >= .4f)
+            if (transform.localScale.x >= .4f && !isFlying)
             {
                 transform.localScale = new Vector3(transform.localScale.x - shrinkRate, transform.localScale.y - shrinkRate, transform.localScale.z);
 

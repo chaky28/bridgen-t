@@ -5,6 +5,7 @@ public class GameController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public WindArea windArea;
     public WindAreaParticles windAreaParticles;
+    public RightForce rightForce;
     private bool windEnabled;
 
     void Start()
@@ -17,11 +18,11 @@ public class GameController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if(!windEnabled)
+            if (!windEnabled)
+            {
                 enableWind();
-            else
-                disableWind();
-            
+                rightForce.applyForceToBubble();
+            }
         }
     }
 

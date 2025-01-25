@@ -6,6 +6,7 @@ public class RightForce : MonoBehaviour
     public float uForce = 1;
     public float gravityScale = .5f;
     private Rigidbody2D rb;
+    public BubbleBlowUpController bubbleBlowUpController;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -15,10 +16,13 @@ public class RightForce : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            rb.AddForce(new Vector2(rForce, uForce));
-            rb.gravityScale = gravityScale;
-        }
+        
+    }
+
+    public void applyForceToBubble()
+    {
+        rb.AddForce(new Vector2(rForce, uForce));
+        rb.gravityScale = gravityScale;
+        bubbleBlowUpController.isFlying = true;
     }
 }

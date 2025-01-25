@@ -150,6 +150,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   windArea: {fileID: 1966701304}
   windAreaParticles: {fileID: 930841631}
+  rightForce: {fileID: 1396929472}
 --- !u!4 &432757659
 Transform:
   m_ObjectHideFlags: 0
@@ -5268,6 +5269,7 @@ MonoBehaviour:
   microphoneInput: {fileID: 2108866090}
   shrinkRate: 0.00025
   MAX_SIZE: 2
+  isFlying: 0
 --- !u!212 &1311563817
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5332,7 +5334,7 @@ Transform:
   m_GameObject: {fileID: 1311563815}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.03, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5445,7 +5447,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 5
   m_LinearDamping: 0
-  m_AngularDamping: 120
+  m_AngularDamping: 0
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -5471,8 +5473,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rForce: 300
-  uForce: 250
+  uForce: 500
   gravityScale: 0.05
+  bubbleBlowUpController: {fileID: 1311563816}
 --- !u!1 &1966701302
 GameObject:
   m_ObjectHideFlags: 0
