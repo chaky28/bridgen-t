@@ -1,0 +1,546 @@
+fileFormatVersion: 2
+guid: 386b300de318cda4e9759388ecc68a3e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2115239478886975463
+    second: buble_pop_two_07_0
+  - first:
+      213: -2278107259153066347
+    second: buble_pop_two_07_1
+  - first:
+      213: 8704749164681319535
+    second: buble_pop_two_07_2
+  - first:
+      213: -2400788024097492989
+    second: buble_pop_two_07_3
+  - first:
+      213: -8149848073897950303
+    second: buble_pop_two_07_4
+  - first:
+      213: -2928267860534322556
+    second: buble_pop_two_07_5
+  - first:
+      213: 9194645208024500307
+    second: buble_pop_two_07_6
+  - first:
+      213: 980669975655299460
+    second: buble_pop_two_07_7
+  - first:
+      213: 7350312232306741125
+    second: buble_pop_two_07_8
+  - first:
+      213: 1693924751502540899
+    second: buble_pop_two_07_9
+  - first:
+      213: 5142684509562584827
+    second: buble_pop_two_07_10
+  - first:
+      213: -2640414619573843026
+    second: buble_pop_two_07_11
+  - first:
+      213: -3632960218933295689
+    second: buble_pop_two_07_12
+  - first:
+      213: -1269970393699138563
+    second: buble_pop_two_07_13
+  - first:
+      213: -8590523679767436963
+    second: buble_pop_two_07_14
+  - first:
+      213: -4440246654218491904
+    second: buble_pop_two_07_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 384
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: buble_pop_two_07_0
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 414
+        width: 58
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e7c0f95917da5d10800000000000000
+      internalID: 2115239478886975463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buble_pop_two_07_1
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 436
+        width: 74
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59651f984898260e0800000000000000
+      internalID: -2278107259153066347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buble_pop_two_07_2
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 458
+        width: 44
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6455bbde3b7dc870800000000000000
+      internalID: 8704749164681319535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buble_pop_two_07_3
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 409
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30038a21300beaed0800000000000000
+      internalID: -2400788024097492989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buble_pop_two_07_4
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 328
+        width: 57
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a349e54b5ce5ee80800000000000000
+      internalID: -8149848073897950303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buble_pop_two_07_5
+      rect:
+        serializedVersion: 2
+        x: 412
+        y: 368
+        width: 48
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48a98ad35e3bc57d0800000000000000
+      internalID: -2928267860534322556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buble_pop_two_07_6
+      rect:
+        serializedVersion: 2
+        x: 428
+        y: 301
+        width: 74
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3584c04f911f99f70800000000000000
+      internalID: 9194645208024500307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buble_pop_two_07_7
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 233
+        width: 41
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48933d4a52a0c9d00800000000000000
+      internalID: 980669975655299460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buble_pop_two_07_8
+      rect:
+        serializedVersion: 2
+        x: 462
+        y: 256
+        width: 41
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58f0ada180e810660800000000000000
+      internalID: 7350312232306741125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buble_pop_two_07_9
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 168
+        width: 30
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3600d813697028710800000000000000
+      internalID: 1693924751502540899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buble_pop_two_07_10
+      rect:
+        serializedVersion: 2
+        x: 446
+        y: 178
+        width: 55
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bfeb168705c7e5740800000000000000
+      internalID: 5142684509562584827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buble_pop_two_07_11
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 57
+        width: 104
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eab8d8c94ec5b5bd0800000000000000
+      internalID: -2640414619573843026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buble_pop_two_07_12
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 22
+        width: 98
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b50b5bdde1259dc0800000000000000
+      internalID: -3632960218933295689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buble_pop_two_07_13
+      rect:
+        serializedVersion: 2
+        x: 393
+        y: 73
+        width: 83
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df3cc40d7a8206ee0800000000000000
+      internalID: -1269970393699138563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buble_pop_two_07_14
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 28
+        width: 43
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5161e05a3458c880800000000000000
+      internalID: -8590523679767436963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buble_pop_two_07_15
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 5
+        width: 62
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 008a03481331162c0800000000000000
+      internalID: -4440246654218491904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      buble_pop_two_07_0: 2115239478886975463
+      buble_pop_two_07_1: -2278107259153066347
+      buble_pop_two_07_10: 5142684509562584827
+      buble_pop_two_07_11: -2640414619573843026
+      buble_pop_two_07_12: -3632960218933295689
+      buble_pop_two_07_13: -1269970393699138563
+      buble_pop_two_07_14: -8590523679767436963
+      buble_pop_two_07_15: -4440246654218491904
+      buble_pop_two_07_2: 8704749164681319535
+      buble_pop_two_07_3: -2400788024097492989
+      buble_pop_two_07_4: -8149848073897950303
+      buble_pop_two_07_5: -2928267860534322556
+      buble_pop_two_07_6: 9194645208024500307
+      buble_pop_two_07_7: 980669975655299460
+      buble_pop_two_07_8: 7350312232306741125
+      buble_pop_two_07_9: 1693924751502540899
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
