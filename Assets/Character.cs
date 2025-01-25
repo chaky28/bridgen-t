@@ -1,17 +1,19 @@
 using UnityEngine;
 
-public class AttachToBubble : MonoBehaviour
+public class Character : MonoBehaviour
 {
+    public RightForce rightForce;
+    public float charMass = 15f;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    public GameObject bubbleSprite;
     void Start()
     {
-        
+        rightForce.inmediateMass += charMass;
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.position = new Vector2(bubbleSprite.transform.position.x, bubbleSprite.transform.position.y - .3f);
+        
     }
 }
