@@ -23,6 +23,8 @@ public class GameController : MonoBehaviour
                 enableWind();
                 rightForce.applyForceToBubble();
             }
+            else
+                disableWind();
         }
     }
 
