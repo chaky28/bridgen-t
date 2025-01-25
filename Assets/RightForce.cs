@@ -14,6 +14,7 @@ public class RightForce : MonoBehaviour
     private Rigidbody2D rb;
     public BubbleBlowUpController bubbleBlowUpController;
     public float inmediateMassMultiplier;
+    public MicrophoneInput microphoneInput;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -40,19 +41,30 @@ public class RightForce : MonoBehaviour
 
     public void applyForceToBubble()
     {
-        rb.mass = initialMass;
-        inmediateMass -= bubbleBlowUpController.transform.localScale.x * inmediateMassMultiplier;
-        if (initialMass - inmediateMass > goUpDiff)
-        {
-            rb.gravityScale = -gravityScale;
+
+        if (microphoneInput.isRaging) {
+            rb.AddForce(new Vector2(rForce + 100000, uForce));
+            bubbleBlowUpController.isFlying = true;
+            forceWasApplied = true;
         }
         else
         {
-            rb.gravityScale = gravityScale;
+            rb.mass = initialMass;
+            inmediateMass -= bubbleBlowUpController.transform.localScale.x * inmediateMassMultiplier;
+            if (initialMass - inmediateMass > goUpDiff)
+            {
+                rb.gravityScale = -gravityScale;
+            }
+            else
+            {
+                rb.gravityScale = gravityScale;
+            }
+
+            rb.AddForce(new Vector2(rForce, uForce));
+            bubbleBlowUpController.isFlying = true;
+            forceWasApplied = true;
         }
 
-        rb.AddForce(new Vector2(rForce, uForce));
-        bubbleBlowUpController.isFlying = true;
-        forceWasApplied = true;
+        
     }
 }

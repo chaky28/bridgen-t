@@ -8,6 +8,9 @@ public class MicrophoneInput : MonoBehaviour
     public int sampleWindow = 128; 
     private AudioClip microphoneClip;
     public bool isDetecting = false;
+    public bool isRaging = false;
+    public float isRagingTime = 256;
+    private float isRagingElapsedTime = 0;
     public Slider sensitivitySlider; 
     public Text sensitivityText;
 
@@ -59,10 +62,24 @@ void Start()
             {
                 Debug.Log("Blowing detected!");
                 isDetecting = true;
+                isRagingElapsedTime = 0;
+            }
+            else if (Input.GetKey(KeyCode.K))
+            {
+                isRagingElapsedTime += 1;
+                if (isRagingElapsedTime > isRagingTime)
+                {
+                    isRaging = true;
+                }
             }
             else if (volume <= sensitivitySlider.value)
             {
                 isDetecting = false;
+                isRagingElapsedTime = 0;
+            }
+            else
+            {
+                isRagingElapsedTime = 0;
             }
         }
     }

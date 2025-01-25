@@ -31,7 +31,13 @@ public class BubbleBlowUpController : MonoBehaviour
         }
 
         Debug.Log(microphoneInput.isDetecting);
-        if (microphoneInput.isDetecting)
+
+        if (microphoneInput.isRaging)
+        {
+            transform.localScale = new Vector3(MAX_SIZE, MAX_SIZE, transform.localScale.z);
+            sr.color = Color.yellow;
+        }
+        else if (microphoneInput.isDetecting)
         {
             float growMultiplier = growingRate * Time.deltaTime;
             transform.localScale = new Vector3(transform.localScale.x + growMultiplier, transform.localScale.y + growMultiplier, transform.localScale.z);
