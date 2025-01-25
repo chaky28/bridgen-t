@@ -6,11 +6,13 @@ public class GameController : MonoBehaviour
     public WindArea windArea;
     public WindAreaParticles windAreaParticles;
     public RightForce rightForce;
+    public float maxWindForce = 2;
     private bool windEnabled;
 
     void Start()
     {
         windEnabled = false;
+        setWind();
     }
 
     // Update is called once per frame
@@ -30,8 +32,8 @@ public class GameController : MonoBehaviour
 
     void setWind()
     {
-        float randomWindX = Random.Range(0, 2);
-        float randomWindY = Random.Range(0, 2);
+        float randomWindX = Random.Range(-maxWindForce, maxWindForce);
+        float randomWindY = Random.Range(-maxWindForce, maxWindForce);
         windArea.SetWind(randomWindX, randomWindY); 
         windAreaParticles.windForce = new Vector2(randomWindX, randomWindY);
     }
@@ -46,7 +48,6 @@ public class GameController : MonoBehaviour
 
     void enableWind()
     {
-        setWind();
         windArea.enabled = true;
         windArea.GetComponent<BoxCollider2D>().enabled = true;
         windEnabled = true;
