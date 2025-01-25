@@ -44,6 +44,7 @@ public class GameController : MonoBehaviour
 
     void enableWind()
     {
+        setWind();
         windArea.enabled = true;
         windArea.GetComponent<BoxCollider2D>().enabled = true;
         windEnabled = true;
