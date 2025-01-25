@@ -23,6 +23,7 @@ public class RightForce : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         if (forceWasApplied)
         {
             if (currentInterval < intervalBetweenMasses)
