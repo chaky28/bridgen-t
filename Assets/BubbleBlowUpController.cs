@@ -15,7 +15,7 @@ public class BubbleBlowUpController : MonoBehaviour
     public FallAfterPop fallAfterPop;
     private Animator anim;
     public Animator sopaHeadanim;
-    public float warningThreshold = 2f;
+    public float warningThreshold = .3f;
     void Start()
     {
         anim = GetComponent<Animator>();
