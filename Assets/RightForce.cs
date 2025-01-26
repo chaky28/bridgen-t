@@ -19,12 +19,17 @@ public class RightForce : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+ 
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (microphoneInput == null)
+        {
+            microphoneInput = FindFirstObjectByType<MicrophoneInput>();
+        }
+
         if (forceWasApplied)
         {
             if (currentInterval < intervalBetweenMasses)
@@ -41,7 +46,7 @@ public class RightForce : MonoBehaviour
 
     public void applyForceToBubble()
     {
-
+        
         if (microphoneInput.isRaging) {
             rb.AddForce(new Vector2(rForce + 100000, uForce));
             bubbleBlowUpController.isFlying = true;
@@ -65,6 +70,14 @@ public class RightForce : MonoBehaviour
             forceWasApplied = true;
         }
 
+        
+    }
+
+    public void applyForceToBubbleDown()
+    {
+            rb.AddForce(new Vector2(2000, -2));
+            bubbleBlowUpController.isFlying = true;
+            forceWasApplied = true;
         
     }
 }

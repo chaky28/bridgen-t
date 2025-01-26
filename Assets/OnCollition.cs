@@ -13,12 +13,19 @@ public class OnCollition : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (bubbleBlowUpController == null)
+        {
+            bubbleBlowUpController = FindFirstObjectByType<BubbleBlowUpController>();
+        }
     }
 
     void OnCollisionEnter2D(Collision2D col)
     {
-        bubbleBlowUpController.TriggerDestroy();
-        Debug.Log("Collided with upper boundry");
+        if (bubbleBlowUpController != null)
+        {
+            bubbleBlowUpController.TriggerDestroy();
+            Debug.Log("Collided with upper boundry");
+
+        }
     }
 }

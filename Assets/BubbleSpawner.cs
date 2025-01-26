@@ -13,13 +13,10 @@ public class BubbleSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.B))
-        {
-            SpawnNewBubble();
-        }
+
     }
 
-    void SpawnNewBubble()
+    public void SpawnNewBubble()
     {
         Instantiate(bubbleToSpawn, spawnLocation.transform.position, Quaternion.identity);
     }

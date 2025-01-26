@@ -16,11 +16,13 @@ public class BubbleBlowUpController : MonoBehaviour
     private Animator anim;
     public Animator sopaHeadanim;
     public float warningThreshold = .3f;
+    private GameController gameController;
     void Start()
     {
         anim = GetComponent<Animator>();
         sopaHeadanim = GameObject.Find("Head").GetComponent<Animator>();
         sr = GetComponent<SpriteRenderer>();
+        gameController = FindFirstObjectByType<GameController>();
     }
 
     // Update is called once per frame
@@ -29,8 +31,13 @@ public class BubbleBlowUpController : MonoBehaviour
         if (microphoneInput == null) { 
             microphoneInput = FindFirstObjectByType<MicrophoneInput>();
         }
+        if (fallAfterPop == null)
+        {
+            fallAfterPop = gameController.activeCharacter.GetComponent<FallAfterPop>();
+        }
 
         Debug.Log(microphoneInput.isDetecting);
+
 
         if (microphoneInput.isRaging)
         {
@@ -68,7 +75,9 @@ public class BubbleBlowUpController : MonoBehaviour
 
     public void TriggerDestroy()
     {
+        gameController.LaunchPlayerDown();
         anim.SetTrigger("pop");
         fallAfterPop.wasPopped = true;
+        GetComponentInParent<BubbleController>().TriggerDestroy();
     }
 }

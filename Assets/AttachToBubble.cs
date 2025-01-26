@@ -3,7 +3,7 @@ using UnityEngine;
 public class AttachToBubble : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    public GameObject bubbleSprite;
+    public BubbleBlowUpController bubbleSprite;
     void Start()
     {
         
@@ -17,6 +17,11 @@ public class AttachToBubble : MonoBehaviour
             transform.position = new Vector2(bubbleSprite.transform.position.x, bubbleSprite.transform.position.y - .47f);
 
         }
+    }
+
+    public void FindBubble()
+    {
+        bubbleSprite = FindFirstObjectByType<BubbleBlowUpController>();
     }
 
 }

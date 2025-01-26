@@ -1,3 +1,5 @@
+using System;
+using UnityEditor.Rendering;
 using UnityEngine;
 
 public class Character : MonoBehaviour
@@ -7,23 +9,50 @@ public class Character : MonoBehaviour
     private Animator anim;
     public bool isOnBubble;
     public bool isCurrentCharacter;
+    Transform bubbleSpawnerTransformPosition;
+    private AttachToBubble attachToBubbleScript;
+    bool moving;
+    float moveSpeed = 1f;
+    Transform pointToMove;
+    CharacterSpawner characterSpawner;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        rightForce.inmediateMass += charMass;
-        anim = GetComponent<Animator>();
+        anim = GetComponentInChildren<Animator>();
         isOnBubble = false;
-        isCurrentCharacter = false;
+        bubbleSpawnerTransformPosition = GameObject.Find("BubbleSpawnLocation").GetComponent<Transform>();
+        attachToBubbleScript = GetComponent<AttachToBubble>();
+        characterSpawner = FindFirstObjectByType<CharacterSpawner>();
     }
 
     // Update is called once per frame
     void Update()
     {
         
+
+        if (moving && transform.position.x < pointToMove.position.x)
+        {
+            transform.position = new Vector3 (transform.position.x + moveSpeed * Time.deltaTime, transform.position.y, transform.position.z);
+        }
+        else if (moving && transform.position.x >= pointToMove.position.x)
+        {
+            moving = false;
+            anim.SetBool("moving", false);
+
+        }
+
+
+        if (Input.GetKeyDown(KeyCode.K)) {
+            HopOnBubble();
+        }
     }
 
     public void setOnBubble()
     {
+        attachToBubbleScript.FindBubble();
+        rightForce = FindFirstObjectByType<RightForce>();
+        rightForce.inmediateMass += charMass;
+        transform.position = (Vector2)bubbleSpawnerTransformPosition.position;
         isOnBubble = true;
         anim.SetBool("bubbled", true);
     }
@@ -42,5 +71,42 @@ public class Character : MonoBehaviour
     public void setAsNotCurrentCharacter()
     {
         isCurrentCharacter = false;
+    }
+
+    public void HopOnBubble()
+    {
+        setOnBubble();
+    }
+
+    public void MoveToPoint(Transform moveTowards)
+    {
+        moving = true;
+        pointToMove = moveTowards;
+        anim = GetComponentInChildren<Animator>();
+        anim.SetBool("moving", true);
+    }
+
+    public void DisableCharacter(bool destroy=false)
+    {
+        if (!destroy)
+        {
+            GetComponent<FallAfterPop>().enabled = false;
+            GetComponent<AttachToBubble>().enabled = false;
+            characterSpawner.ReplacePlayers();
+            GetComponent<Character>().enabled = false;
+        }
+        
+        if (destroy)
+        {
+            Invoke("DestroyCharacter", 1f);
+        }
+
+
+    }
+
+    void DestroyCharacter()
+    {
+        Destroy(gameObject);
+
     }
 }

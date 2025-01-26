@@ -14,13 +14,16 @@ public class GameController : MonoBehaviour
     public float maxWindForce = 2;
     private bool windEnabled;
     public int playerLives = 3;
+    public CharacterSpawner characterSpawner;
+    public BubbleSpawner bubbleSpawner;
     public Character activeCharacter;
-    private string gameState; // Ready, Preparing, Flying 
-    
+    public string gameState; //Spawing, Ready, Preparing, Flying 
+
 
     void Start()
     {
-        gameState = "Ready";
+        gameState = "Spawning";
+        //SpawnAllPlayers();
         windEnabled = false;
         setWind();
     }
@@ -35,16 +38,40 @@ public class GameController : MonoBehaviour
         }
 
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (gameState == "Spawning")
         {
+            return;
+
+        }
+     
+
+
+        if (Input.GetKeyDown(KeyCode.Space) && gameState == "Ready")
+        {
+            LaunchPlayer();
+        }
+    }
+
+    public void LaunchPlayer()
+    {
+        if (gameState == "Ready")
+        {
+
+            FindActiveBubble();
             FindActiveCharacter();
-            if (!windEnabled)
-            {
-                enableWind();
-                rightForce.applyForceToBubble();
-            }
-            else
-                disableWind();
+            rightForce.applyForceToBubble();
+            gameState = "Flying";
+        }
+    }
+    public void LaunchPlayerDown()
+    {
+        if (gameState == "Ready")
+        {
+
+            FindActiveBubble();
+            FindActiveCharacter();
+            rightForce.applyForceToBubbleDown();
+            gameState = "Flying";
         }
     }
 
@@ -52,12 +79,10 @@ public class GameController : MonoBehaviour
     {
         float randomWindX = Random.Range(-maxWindForce, maxWindForce);
         float randomWindY = Random.Range(-maxWindForce, maxWindForce);
-        windArea.SetWind(randomWindX, randomWindY); 
+        windArea.SetWind(randomWindX, randomWindY);
         windAreaParticles.windForce = new Vector2(randomWindX, randomWindY);
         windAreaParticles2.windForce = new Vector2(randomWindX, randomWindY);
         windAreaParticles3.windForce = new Vector2(randomWindX, randomWindY);
-
-
     }
 
     void disableWind()
@@ -91,4 +116,37 @@ public class GameController : MonoBehaviour
         Character targetCharacter = characters.FirstOrDefault(character => character.isCurrentCharacter);
         activeCharacter = targetCharacter;
     }
+
+    void FindActiveBubble()
+    {
+        rightForce = FindFirstObjectByType<RightForce>();
+    }
+
+
+    void SpawnNewCharacter()
+    {
+        activeCharacter.setAsNotCurrentCharacter();
+        characterSpawner.SpawnNewCharacter();
+
+    }
+
+    void SpawnAllPlayers()
+    {
+        characterSpawner.SpawnAllCharacters();
+    }
+
+    public void SetGameReady()
+    {
+        bubbleSpawner.SpawnNewBubble();
+        FindActiveCharacter();
+        activeCharacter.HopOnBubble();
+        gameState = "Ready";
+    }
+
+    public void SetGamePreparing()
+    {
+        gameState = "Spawning";
+
+    }
 }
+
