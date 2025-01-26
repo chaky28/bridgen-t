@@ -16,10 +16,15 @@ public class CharacterSpawner : MonoBehaviour
     public Character character_3;
 
     public GameController gameController;
+    public SoundController soundController;
 
     void Start()
     {
         int numberOfCharacters = 0;
+        if (soundController == null)
+        {
+            soundController = FindFirstObjectByType<SoundController>();
+        }
     }
 
     // Update is called once per frame
@@ -27,6 +32,7 @@ public class CharacterSpawner : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.B))
         {
+            soundController.PlaySound("StartUp");
             SpawnAllCharacters();
             //SpawnNewCharacter();
         }
@@ -41,6 +47,7 @@ public class CharacterSpawner : MonoBehaviour
 
     public void SpawnAllCharacters()
     {
+
         int index = Random.Range(0, 5);
         Invoke("SpawnFirstPlayer", 0.1f);
         Invoke("SpawnSecondPlayer", 1f);

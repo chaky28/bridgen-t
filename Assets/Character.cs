@@ -108,7 +108,5 @@ public class Character : MonoBehaviour
     void DestroyCharacter()
     {
         Destroy(gameObject);
-        soundController.PlaySound("Looser");
-
     }
 }
