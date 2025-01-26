@@ -10,6 +10,7 @@ public class SoundController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        PlaySound("Song");
     }
 
     // Update is called once per frame
@@ -33,6 +34,10 @@ public class SoundController : MonoBehaviour
             playPopSound.Play();
         }
         else if (soundName == "Wind")
+        {
+            playWindSound.Play();
+        }
+        else if (soundName == "Song")
         {
             playWindSound.Play();
         }
