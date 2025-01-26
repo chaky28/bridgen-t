@@ -15,6 +15,7 @@ public class Character : MonoBehaviour
     float moveSpeed = 1f;
     Transform pointToMove;
     CharacterSpawner characterSpawner;
+    public SoundController soundController;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -107,6 +108,7 @@ public class Character : MonoBehaviour
     void DestroyCharacter()
     {
         Destroy(gameObject);
+        soundController.PlaySound("Looser");
 
     }
 }
