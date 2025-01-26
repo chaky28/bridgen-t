@@ -1,7 +1,10 @@
 using System.Linq;
+using TMPro;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem.LowLevel;
 using UnityEngine.SceneManagement;
+using static UnityEngine.Rendering.DebugUI;
 
 public class GameController : MonoBehaviour
 {
@@ -27,6 +30,7 @@ public class GameController : MonoBehaviour
     public GameObject HelpButton;
     public GameObject DeathScreen;
     public GameObject CreditsScreen;
+    public GameObject HelpScreen;
 
     void Start()
     {
@@ -34,6 +38,7 @@ public class GameController : MonoBehaviour
         //SpawnAllPlayers();
         windEnabled = false;
         setWind();
+        
     }
 
     // Update is called once per frame
@@ -148,22 +153,39 @@ public class GameController : MonoBehaviour
         characterSpawner.SpawnAllCharacters();
     }
 
-    public void SetGameReady()
+    public void SetGameReady(bool force_ready = false)
     {
+        if (gameState == "Lost" && !force_ready)
+        {
+            return;
+        } 
+        HideAllUI();
         bubbleSpawner.SpawnNewBubble();
         FindActiveCharacter();
         activeCharacter.HopOnBubble();
+        setWind();
         gameState = "Ready";
     }
 
     public void SetGamePreparing()
     {
+        if (gameState == "Lost"){
+            return;
+        }
         gameState = "Spawning";
 
     }
 
+    public void LoseGame()
+    {
+        gameState = "Lost";
+        HideAllUI();
+        Invoke("ShowLoseScreen", 1.25f);
+    }
+
     public void HideAllUI()
     {
+        Debug.Log("HIDING");
         Logo.SetActive(false);
         StartButton.SetActive(false);
         CreditsButton.SetActive(false);
@@ -171,7 +193,59 @@ public class GameController : MonoBehaviour
         HelpButton.SetActive(false);
         DeathScreen.SetActive(false);
         CreditsScreen.SetActive(false);
+        HelpScreen.SetActive(false);
+    }
+    
+    public void ShowCredits()
+    {
+        HideAllUI();
+        CreditsScreen.SetActive(true);
+    }
 
+    public void CloseCredits()
+    {
+        HideAllUI();
+        ShowStartMenu();
+    }
+
+    public void ShowHelpScreen()
+    {
+        HideAllUI();
+        HelpScreen.SetActive(true);
+    }
+
+    public void CloseHelpScreen()
+    {
+        HideAllUI();
+        ShowStartMenu();
+    }
+    public void ShowStartMenu()
+    {
+        Logo.SetActive(true);
+        StartButton.SetActive(true);
+        CreditsButton.SetActive(true);
+        HelpButton.SetActive(true);
+
+    }
+
+    void ShowLoseScreen()
+    {
+        DeathScreen.SetActive(true);
+        TextMeshPro textMesh = DeathScreen.GetComponentInChildren<TextMeshPro>();
+        int savedChars = detectSavedCharacters.savedCharacters;
+        string new_text = "";
+        if (savedChars == 0)
+        {
+            new_text = "You didn't help anyone get to the other side.";
+        }
+        else if (savedChars == 1)
+        {
+            new_text = "You helped 1 friend get to the other side!";
+        }
+        else {
+            new_text = "You helped " + savedChars + " friends get to the other side!";
+        }
+        textMesh.text = new_text;
     }
 }
 

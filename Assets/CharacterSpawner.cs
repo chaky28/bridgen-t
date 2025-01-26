@@ -97,7 +97,7 @@ public class CharacterSpawner : MonoBehaviour
 
     void SetGameReady()
     {
-        gameController.SetGameReady();
+        gameController.SetGameReady(false);
     }
 
     void SetGamePreparing()
@@ -116,7 +116,7 @@ public class CharacterSpawner : MonoBehaviour
         character_1 = character_0;
         character_1.MoveToPoint(location1);
         SpawnCharacterZero();
-        Invoke("SetGameReady", 1f);
+        Invoke("SetGameReady", 1.5f);
 
     }
 

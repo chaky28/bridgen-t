@@ -12,12 +12,13 @@ public class DetectSavedCharacter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+
+    private void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collision.collider.CompareTag("Character"))
+        if (collider.CompareTag("Character"))
         {
             savedCharacters++;
         }

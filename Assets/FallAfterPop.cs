@@ -23,6 +23,7 @@ public class FallAfterPop : MonoBehaviour
             rb.bodyType = RigidbodyType2D.Dynamic;
             rb.gravityScale = 3f;
             GetComponent<Character>().DisableCharacter();
+            wasPopped = false;
         }
     }
 }

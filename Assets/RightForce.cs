@@ -15,6 +15,7 @@ public class RightForce : MonoBehaviour
     public BubbleBlowUpController bubbleBlowUpController;
     public float inmediateMassMultiplier;
     public MicrophoneInput microphoneInput;
+    public SoundController soundController;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -23,7 +24,6 @@ public class RightForce : MonoBehaviour
         {
             soundController = FindFirstObjectByType<SoundController>();
         }
-        soundController.PlaySound("StartUp");
     }
 
     // Update is called once per frame

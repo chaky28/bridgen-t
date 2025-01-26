@@ -95,10 +95,8 @@ public class Character : MonoBehaviour
     {
         if (!destroy)
         {
-            GetComponent<FallAfterPop>().enabled = false;
-            GetComponent<AttachToBubble>().enabled = false;
-            characterSpawner.ReplacePlayers();
-            GetComponent<Character>().enabled = false;
+            Invoke("TurnOffCharacters", 1f);
+
         }
         
         if (destroy)
@@ -109,6 +107,14 @@ public class Character : MonoBehaviour
 
     }
 
+    void TurnOffCharacters()
+    {
+        GetComponent<FallAfterPop>().enabled = false;
+        GetComponent<AttachToBubble>().enabled = false;
+        GetComponent<Character>().enabled = false;
+        characterSpawner.ReplacePlayers();
+
+    }
     void DestroyCharacter()
     {
         Destroy(gameObject);

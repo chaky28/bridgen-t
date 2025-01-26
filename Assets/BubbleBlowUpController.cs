@@ -44,6 +44,7 @@ public class BubbleBlowUpController : MonoBehaviour
             transform.localScale = new Vector3(MAX_SIZE, MAX_SIZE, transform.localScale.z);
             sr.color = Color.yellow;
         }
+
         else if (microphoneInput.isDetecting)
         {
             float growMultiplier = growingRate * Time.deltaTime;

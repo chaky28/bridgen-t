@@ -3,7 +3,7 @@ using UnityEngine;
 public class BelowBoundary : MonoBehaviour
 {
     public SoundController soundController;
-
+    public GameController gameController;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -24,6 +24,8 @@ public class BelowBoundary : MonoBehaviour
     {
         if (collision.collider.CompareTag("Character"))
         {
+            gameController.LoseGame();
+
             collision.collider.GetComponent<Character>().DisableCharacter(true);
             soundController.PlaySound("Looser");
         }

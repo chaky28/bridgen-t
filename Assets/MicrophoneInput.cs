@@ -58,29 +58,15 @@ void Start()
             //Debug.Log("Volume: " + volume);
 
             // Detect blowing based on volume threshold
-            if ( Input.GetKey(KeyCode.Q)) //volume > sensitivitySlider.value)
+            if (volume > sensitivitySlider.value)
             {
-                Debug.Log("Blowing detected!");
                 isDetecting = true;
-                isRagingElapsedTime = 0;
-            }
-            else if (Input.GetKey(KeyCode.K))
-            {
-                isRagingElapsedTime += 1;
-                if (isRagingElapsedTime > isRagingTime)
-                {
-                    isRaging = true;
-                }
             }
             else if (volume <= sensitivitySlider.value)
             {
                 isDetecting = false;
-                isRagingElapsedTime = 0;
             }
-            else
-            {
-                isRagingElapsedTime = 0;
-            }
+     
         }
     }
 
