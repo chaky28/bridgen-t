@@ -25,7 +25,6 @@ public class OnCollition : MonoBehaviour
         {
             bubbleBlowUpController.TriggerDestroy();
             Debug.Log("Collided with upper boundry");
-
         }
     }
 }
