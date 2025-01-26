@@ -20,6 +20,13 @@ public class GameController : MonoBehaviour
     public string gameState; //Spawing, Ready, Preparing, Flying 
     public DetectSavedCharacter detectSavedCharacters;
 
+    public GameObject Logo;
+    public GameObject StartButton;
+    public GameObject CreditsButton;
+    public GameObject QuitButton;
+    public GameObject HelpButton;
+    public GameObject DeathScreen;
+    public GameObject CreditsScreen;
 
     void Start()
     {
@@ -136,7 +143,7 @@ public class GameController : MonoBehaviour
 
     }
 
-    void SpawnAllPlayers()
+    public void SpawnAllPlayers()
     {
         characterSpawner.SpawnAllCharacters();
     }
@@ -152,6 +159,18 @@ public class GameController : MonoBehaviour
     public void SetGamePreparing()
     {
         gameState = "Spawning";
+
+    }
+
+    public void HideAllUI()
+    {
+        Logo.SetActive(false);
+        StartButton.SetActive(false);
+        CreditsButton.SetActive(false);
+        QuitButton.SetActive(false);
+        HelpButton.SetActive(false);
+        DeathScreen.SetActive(false);
+        CreditsScreen.SetActive(false);
 
     }
 }

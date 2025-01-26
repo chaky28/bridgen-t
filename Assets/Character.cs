@@ -24,6 +24,10 @@ public class Character : MonoBehaviour
         bubbleSpawnerTransformPosition = GameObject.Find("BubbleSpawnLocation").GetComponent<Transform>();
         attachToBubbleScript = GetComponent<AttachToBubble>();
         characterSpawner = FindFirstObjectByType<CharacterSpawner>();
+        if (soundController == null)
+        {
+            soundController = FindFirstObjectByType<SoundController>();
+        }
     }
 
     // Update is called once per frame
