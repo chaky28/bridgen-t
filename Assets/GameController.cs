@@ -1,4 +1,6 @@
+using System.Linq;
 using UnityEngine;
+using UnityEngine.InputSystem.LowLevel;
 using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
@@ -6,12 +8,19 @@ public class GameController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public WindArea windArea;
     public WindAreaParticles windAreaParticles;
+    public WindAreaParticles windAreaParticles2;
+    public WindAreaParticles windAreaParticles3;
     public RightForce rightForce;
     public float maxWindForce = 2;
     private bool windEnabled;
     public int playerLives = 3;
+    public Character activeCharacter;
+    private string gameState; // Ready, Preparing, Flying 
+    
+
     void Start()
     {
+        gameState = "Ready";
         windEnabled = false;
         setWind();
     }
@@ -28,6 +37,7 @@ public class GameController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            FindActiveCharacter();
             if (!windEnabled)
             {
                 enableWind();
@@ -44,6 +54,10 @@ public class GameController : MonoBehaviour
         float randomWindY = Random.Range(-maxWindForce, maxWindForce);
         windArea.SetWind(randomWindX, randomWindY); 
         windAreaParticles.windForce = new Vector2(randomWindX, randomWindY);
+        windAreaParticles2.windForce = new Vector2(randomWindX, randomWindY);
+        windAreaParticles3.windForce = new Vector2(randomWindX, randomWindY);
+
+
     }
 
     void disableWind()
@@ -71,5 +85,10 @@ public class GameController : MonoBehaviour
         playerLives -= 1;
     }
 
-
+    void FindActiveCharacter()
+    {
+        var characters = FindObjectsByType<Character>(FindObjectsSortMode.None);
+        Character targetCharacter = characters.FirstOrDefault(character => character.isCurrentCharacter);
+        activeCharacter = targetCharacter;
+    }
 }

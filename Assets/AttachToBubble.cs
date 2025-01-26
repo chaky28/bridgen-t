@@ -12,6 +12,11 @@ public class AttachToBubble : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = new Vector2(bubbleSprite.transform.position.x, bubbleSprite.transform.position.y - .65f);
+        if (bubbleSprite != null)
+        {
+            transform.position = new Vector2(bubbleSprite.transform.position.x, bubbleSprite.transform.position.y - .47f);
+
+        }
     }
+
 }
