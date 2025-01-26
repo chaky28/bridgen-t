@@ -19,6 +19,11 @@ public class RightForce : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        if (soundController == null)
+        {
+            soundController = FindFirstObjectByType<SoundController>();
+        }
+        soundController.PlaySound("StartUp");
     }
 
     // Update is called once per frame
@@ -27,6 +32,11 @@ public class RightForce : MonoBehaviour
         if (microphoneInput == null)
         {
             microphoneInput = FindFirstObjectByType<MicrophoneInput>();
+        }
+
+        if (soundController == null)
+        {
+            soundController = FindFirstObjectByType<SoundController>();
         }
 
         if (forceWasApplied)
