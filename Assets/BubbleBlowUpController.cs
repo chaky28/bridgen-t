@@ -50,11 +50,6 @@ public class BubbleBlowUpController : MonoBehaviour
             transform.localScale = new Vector3(transform.localScale.x + growMultiplier, transform.localScale.y + growMultiplier, transform.localScale.z);
             sopaHeadanim.SetBool("press", true);
 
-            if (transform.localScale.x > (MAX_SIZE - warningThreshold))
-            {
-                sr.color = Color.red;
-            }
-
             if (transform.localScale.x >= MAX_SIZE)
             {
                 TriggerDestroy();
