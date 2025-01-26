@@ -17,6 +17,7 @@ public class BubbleBlowUpController : MonoBehaviour
     public Animator sopaHeadanim;
     public float warningThreshold = .3f;
     private GameController gameController;
+    public SoundController soundController;
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -75,5 +76,7 @@ public class BubbleBlowUpController : MonoBehaviour
         anim.SetTrigger("pop");
         fallAfterPop.wasPopped = true;
         GetComponentInParent<BubbleController>().TriggerDestroy();
+        soundController.PlaySound("Pop");
+
     }
 }
