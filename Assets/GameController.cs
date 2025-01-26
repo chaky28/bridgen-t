@@ -18,6 +18,7 @@ public class GameController : MonoBehaviour
     public BubbleSpawner bubbleSpawner;
     public Character activeCharacter;
     public string gameState; //Spawing, Ready, Preparing, Flying 
+    public DetectSavedCharacter detectSavedCharacters;
 
 
     void Start()
@@ -50,6 +51,11 @@ public class GameController : MonoBehaviour
         {
             LaunchPlayer();
         }
+    }
+
+    private int getSavedCharacters()
+    {
+        return detectSavedCharacters.savedCharacters;
     }
 
     public void LaunchPlayer()
