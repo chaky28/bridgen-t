@@ -63,7 +63,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rightForce: {fileID: 0}
-  charMass: 10
+  charMass: 5
   isOnBubble: 0
   isCurrentCharacter: 0
   soundController: {fileID: 0}
