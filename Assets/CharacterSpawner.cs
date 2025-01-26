@@ -18,6 +18,8 @@ public class CharacterSpawner : MonoBehaviour
     public GameController gameController;
     public SoundController soundController;
 
+    bool replacing = false;
+
     void Start()
     {
         int numberOfCharacters = 0;
@@ -47,7 +49,6 @@ public class CharacterSpawner : MonoBehaviour
 
     public void SpawnAllCharacters()
     {
-
         int index = Random.Range(0, 5);
         Invoke("SpawnFirstPlayer", 0.1f);
         Invoke("SpawnSecondPlayer", 1f);
@@ -98,6 +99,8 @@ public class CharacterSpawner : MonoBehaviour
     void SetGameReady()
     {
         gameController.SetGameReady(false);
+        replacing = false;
+
     }
 
     void SetGamePreparing()
@@ -106,6 +109,12 @@ public class CharacterSpawner : MonoBehaviour
     }
     public void ReplacePlayers()
     {
+        Debug.Log("I AM BEING CALLED");
+        if (replacing)
+        {
+            return;
+        }
+        replacing = true;
         character_3.setAsNotCurrentCharacter();
         SetGamePreparing();
         character_3 = character_2;

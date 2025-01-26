@@ -32,12 +32,15 @@ public class BubbleBlowUpController : MonoBehaviour
         if (microphoneInput == null) { 
             microphoneInput = FindFirstObjectByType<MicrophoneInput>();
         }
+        if (soundController == null)
+        {
+            soundController = FindFirstObjectByType<SoundController>();
+        }
         if (fallAfterPop == null)
         {
             fallAfterPop = gameController.activeCharacter.GetComponent<FallAfterPop>();
         }
 
-        Debug.Log(microphoneInput.isDetecting);
 
 
         if (microphoneInput.isRaging)
@@ -46,7 +49,7 @@ public class BubbleBlowUpController : MonoBehaviour
             sr.color = Color.yellow;
         }
 
-        else if (microphoneInput.isDetecting)
+        else if ((Input.GetKey(KeyCode.Q) || microphoneInput.isDetecting) && gameController.gameState == "Ready")
         {
             float growMultiplier = growingRate * Time.deltaTime;
             transform.localScale = new Vector3(transform.localScale.x + growMultiplier, transform.localScale.y + growMultiplier, transform.localScale.z);
@@ -76,7 +79,6 @@ public class BubbleBlowUpController : MonoBehaviour
         anim.SetTrigger("pop");
         fallAfterPop.wasPopped = true;
         GetComponentInParent<BubbleController>().TriggerDestroy();
-        soundController.PlaySound("Pop");
 
     }
 }

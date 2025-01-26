@@ -6,6 +6,8 @@ public class SoundController : MonoBehaviour
     public PlaySound playLooserSound;
     public PlaySound playPopSound;
     public PlaySound playWindSound;
+    public PlaySound playMusicSound;
+    public PlaySound playClickSound;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -16,7 +18,9 @@ public class SoundController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetMouseButtonDown(0)){
+            PlaySound("Click");
+        }
     }
 
     public void PlaySound(string soundName)
@@ -39,7 +43,11 @@ public class SoundController : MonoBehaviour
         }
         else if (soundName == "Song")
         {
-            playWindSound.Play();
+            playMusicSound.Play();
+        }
+        else if (soundName == "Click")
+        {
+            playClickSound.Play();
         }
 
     }

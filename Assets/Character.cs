@@ -1,5 +1,3 @@
-using System;
-using UnityEditor.Rendering;
 using UnityEngine;
 
 public class Character : MonoBehaviour
@@ -93,6 +91,8 @@ public class Character : MonoBehaviour
 
     public void DisableCharacter(bool destroy=false)
     {
+        anim = GetComponentInChildren<Animator>();
+        anim.SetBool("moving", true);
         if (!destroy)
         {
             Invoke("TurnOffCharacters", 1f);
@@ -109,6 +109,8 @@ public class Character : MonoBehaviour
 
     void TurnOffCharacters()
     {
+        anim = GetComponentInChildren<Animator>();
+        anim.SetBool("moving", true);
         GetComponent<FallAfterPop>().enabled = false;
         GetComponent<AttachToBubble>().enabled = false;
         GetComponent<Character>().enabled = false;

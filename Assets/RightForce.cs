@@ -55,7 +55,11 @@ public class RightForce : MonoBehaviour
 
     public void applyForceToBubble()
     {
-        
+        if (microphoneInput == null)
+        {
+            microphoneInput = FindFirstObjectByType<MicrophoneInput>();
+        }
+
         if (microphoneInput.isRaging) {
             rb.AddForce(new Vector2(rForce + 100000, uForce));
             bubbleBlowUpController.isFlying = true;

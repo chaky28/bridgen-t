@@ -20,6 +20,7 @@ public class PlayAgainButton : MonoBehaviour
     {
         gameController.detectSavedCharacters.savedCharacters = 0;
         gameController.SetGameReady(true);
+        gameController.RemoveSavedCharacters();
 
     }
 }

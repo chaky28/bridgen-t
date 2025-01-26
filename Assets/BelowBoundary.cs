@@ -27,7 +27,6 @@ public class BelowBoundary : MonoBehaviour
             gameController.LoseGame();
 
             collision.collider.GetComponent<Character>().DisableCharacter(true);
-            soundController.PlaySound("Looser");
         }
     }
 }

@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 300838369231109138}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.93, y: 0.3, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -111,6 +111,7 @@ MonoBehaviour:
   fallAfterPop: {fileID: 0}
   sopaHeadanim: {fileID: 0}
   warningThreshold: 0.3
+  soundController: {fileID: 0}
 --- !u!95 &5181893036426754175
 Animator:
   serializedVersion: 7
@@ -162,7 +163,7 @@ Transform:
   m_GameObject: {fileID: 7463061325431679496}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.576, y: -4.064, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -230,8 +231,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -0.0043028593}
-  m_Radius: 0.36074817
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 0.45
 --- !u!114 &8196594129419886182
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -254,6 +255,7 @@ MonoBehaviour:
   bubbleBlowUpController: {fileID: 7624695414358745949}
   inmediateMassMultiplier: 7
   microphoneInput: {fileID: 0}
+  soundController: {fileID: 0}
 --- !u!114 &9025711596784243584
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEditor;
@@ -31,6 +32,14 @@ public class GameController : MonoBehaviour
     public GameObject DeathScreen;
     public GameObject CreditsScreen;
     public GameObject HelpScreen;
+
+    public GameObject Foreground1;
+    public GameObject Foreground2;
+    public GameObject Foreground3;
+    public GameObject Spawner;
+
+    public List<GameObject> savedCharacters = new List<GameObject>();
+
 
     void Start()
     {
@@ -158,7 +167,7 @@ public class GameController : MonoBehaviour
         if (gameState == "Lost" && !force_ready)
         {
             return;
-        } 
+        }
         HideAllUI();
         bubbleSpawner.SpawnNewBubble();
         FindActiveCharacter();
@@ -185,7 +194,6 @@ public class GameController : MonoBehaviour
 
     public void HideAllUI()
     {
-        Debug.Log("HIDING");
         Logo.SetActive(false);
         StartButton.SetActive(false);
         CreditsButton.SetActive(false);
@@ -194,11 +202,14 @@ public class GameController : MonoBehaviour
         DeathScreen.SetActive(false);
         CreditsScreen.SetActive(false);
         HelpScreen.SetActive(false);
-    }
+}
     
     public void ShowCredits()
     {
         HideAllUI();
+        Foreground1.SetActive(false);
+        Foreground2.SetActive(false);
+        Spawner.SetActive(false);
         CreditsScreen.SetActive(true);
     }
 
@@ -211,6 +222,9 @@ public class GameController : MonoBehaviour
     public void ShowHelpScreen()
     {
         HideAllUI();
+        Foreground1.SetActive(false);
+        Foreground2.SetActive(false);
+        Spawner.SetActive(false);
         HelpScreen.SetActive(true);
     }
 
@@ -225,6 +239,10 @@ public class GameController : MonoBehaviour
         StartButton.SetActive(true);
         CreditsButton.SetActive(true);
         HelpButton.SetActive(true);
+        QuitButton.SetActive(true);
+
+
+
 
     }
 
@@ -246,6 +264,22 @@ public class GameController : MonoBehaviour
             new_text = "You helped " + savedChars + " friends get to the other side!";
         }
         textMesh.text = new_text;
+        gameState = "Lost";
+    }
+
+    public void ShowGame()
+    {
+        Foreground1.SetActive(true);
+        Foreground2.SetActive(true);
+        Spawner.SetActive(true);
+    }
+
+    public void RemoveSavedCharacters()
+    {
+        foreach (GameObject sc in savedCharacters)
+        {
+            Destroy(sc);
+        }
     }
 }
 

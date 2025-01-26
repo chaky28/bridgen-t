@@ -3,6 +3,7 @@ using UnityEngine;
 public class DetectSavedCharacter : MonoBehaviour
 {
     public int savedCharacters = 0;
+    public GameController gameController;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -21,6 +22,7 @@ public class DetectSavedCharacter : MonoBehaviour
         if (collider.CompareTag("Character"))
         {
             savedCharacters++;
+            gameController.savedCharacters.Add(collider.gameObject);
         }
     }
 }

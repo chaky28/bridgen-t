@@ -18,6 +18,7 @@ public class StartButton : MonoBehaviour
 
     private void OnMouseDown()
     {
+        gameController.ShowGame();
         gameController.HideAllUI();
         gameController.SpawnAllPlayers();
     }
